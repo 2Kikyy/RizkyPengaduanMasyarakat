@@ -7,7 +7,7 @@
     android:padding="30dp"
     android:background="@color/white"
     android:gravity="center"
-    tools:context=".LoginMasyarakatActivity">
+    tools:context=".RegistrasiMasyarakat">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -42,10 +42,55 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
-                android:text="Login Masyarakat"
+                android:text="Register Masyarakat"
                 android:textColor="#04277A"
                 android:textSize="24dp"
                 android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/editTextNikD"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_outline_login_register"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="NIK"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/editTextNamaD"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_outline_login_register"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Nama Lengkap"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/editTextTeleponD"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_outline_login_register"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Telepon"
+                android:inputType="number"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="18dp" />
 
             <EditText
                 android:id="@+id/editTextUsernameD"
@@ -78,24 +123,24 @@
                 android:textSize="18dp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnLoginD"
+                android:id="@+id/btnRegisterD"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="18dp"
                 android:background="@drawable/bg_solid_login_register"
                 android:fontFamily="@font/poppins_semibold"
-                android:text="Login"
+                android:text="Register"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="18dp" />
 
             <TextView
-                android:id="@+id/belum_register_masyarakat"
+                android:id="@+id/sudah_register_masyarakat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:text="Anda belum punya akun? Register"
+                android:text="Anda sudah punya akun? Login"
                 android:textColor="#04277A"
                 android:textSize="15dp"
                 android:textStyle="bold"

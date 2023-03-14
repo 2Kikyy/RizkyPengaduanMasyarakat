@@ -31,32 +31,114 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textNamaLengkap"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
                 android:text="Nama Lengkap"
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:fontFamily="@font/poppins_semibold"/>
+
+            <TextView
+                android:id="@+id/textInfoUser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Anda adalah masyarakat"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:fontFamily="@font/poppins_regular" />
         </LinearLayout>
     </LinearLayout>
 
-    <ScrollView
+    <TextView
+        android:id="@+id/txtSayHello"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Selamat datang..."
+        android:textColor="@color/black"
+        android:textSize="26dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/txtSayHello2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="43dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Silakan adukan masalah anda"
+        android:textColor="@color/black"
+        android:textSize="23dp"
+        app:layout_constraintTop_toTopOf="@+id/txtSayHello"
+        tools:layout_editor_absoluteX="28dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/complaint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        app:cardBackgroundColor="#062161"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/txtSayHello2"
+        tools:ignore="MissingConstraints">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/imgComplaint"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:padding="30dp"
+            app:srcCompat="@drawable/complaint80" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom | center"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Aduan"
+            android:textColor="#fff"
+            android:textSize="20dp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/response"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="#062161"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/complaint"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imgResponse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:padding="30dp"
+            app:srcCompat="@drawable/response80" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom | center"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Response"
+            android:textColor="#fff"
+            android:textSize="20dp" />
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
