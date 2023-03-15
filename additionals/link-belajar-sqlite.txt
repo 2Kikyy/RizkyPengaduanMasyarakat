@@ -6,3 +6,5 @@ https://fadelmohamad.wordpress.com/2019/06/19/membuat-login-sederhana-mengunakan
 https://arifdauhiblog.wordpress.com/2019/05/27/tutorial-android-studio-simple-login-menggunakan-sqlite/
 
 https://blog.ariflaksito.net/2021/01/menggunakan-sqlite-di-android.html
+
+https://github.com/RajaVamsi11/android-login-and-registration/tree/master/app/src/main/java/com/example/vamsi/login
