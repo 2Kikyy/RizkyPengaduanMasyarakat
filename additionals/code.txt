@@ -1,0 +1,32 @@
+package com.example.pengaduanmasyarakatridwan;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+public class DataHelper extends SQLiteOpenHelper {
+    private static final String DATABASE_NAME = "pengaduan_masyarakat.db";
+    private static final int DATABASE_VERSION = 1;
+
+    public DataHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        String sql = "CREATE TABLE petugas(id_petugas integer(11) primary key, nama_petugas varchar(35) not null," +
+                "username varchar(25) not null, password varchar(32) not null, telp varchar(13) not null, level enum('admin','petugas');";
+        Log.d("Data", "onCreate" + sql);
+        db.execSQL(sql);
+        String sql2 = "CREATE TABLE masyarakat(nik char(16) primary key, nama varchar(35) not null, username varchar(25) not null," +
+                "password varchar(32) not null, telp varchar(13) not null);";
+        Log.d("Data", "onCreate" + sql2);
+        db.execSQL(sql2);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
+    }
+}

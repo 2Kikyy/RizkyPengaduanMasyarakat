@@ -5,32 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    android:padding="20dp"
-    tools:context=".Pengaduan">
+    android:padding="30dp"
+    tools:context=".GenerateLaporan">
 
     <TextView
-        android:id="@+id/txtInfo"
+        android:id="@+id/txtTitlePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Data Tanggapan"
+        android:text="Nama Laporan"
         android:textColor="#000"
-        android:textSize="28dp"
+        android:textSize="26dp"
+        android:fontFamily="@font/poppins_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtInfo2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="380dp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Belum Ada Tanggapan!"
-        android:textColor="#000"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPdfD"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="516dp"
+        android:background="@drawable/bg_solid_login_register"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Generate PDF"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.737"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtInfo" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTitlePage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

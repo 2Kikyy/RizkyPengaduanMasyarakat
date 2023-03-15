@@ -1,0 +1,44 @@
+private void btnMasuk() {
+        uname=findViewById(R.id.editUname);
+        pass=findViewById(R.id.editPass);
+        btn1=findViewById(R.id.btnMasuk);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dataHelper = new DataHelper(LoginActivity.this);
+                SQLiteDatabase db = dataHelper.getReadableDatabase();
+                cursor = db.rawQuery("SELECT * FROM masyarakat WHERE username ='"+ uname.getText().toString() +"' and " +
+                        "password ='"+ pass.getText().toString() +"'",null);
+                cursor2 = db.rawQuery("SELECT * FROM petugas WHERE username ='"+ uname.getText().toString() +"' and " +
+                        "password ='"+ pass.getText().toString() +"'",null);
+                if (cursor.getCount() == 1) {
+                    Toast.makeText(getApplicationContext(), "Berhasil masuk !", Toast.LENGTH_SHORT).show();
+                    cursor.moveToPosition(0);
+                    String user = cursor.getString(1).toString();
+                    Intent intent = new Intent(LoginActivity.this, DashboardMasyarakat.class);
+                    intent.putExtra("nama", user);
+                    startActivity(intent);
+                    finish();
+                } else if (cursor2.getCount() == 1) {
+                    cursor2.moveToPosition(0);
+                    String user = cursor2.getString(1).toString();
+                    String level = cursor2.getString(5).toString();
+                    if (level.equalsIgnoreCase("admin")) {
+                        Toast.makeText(getApplicationContext(), "Berhasil masuk !", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, DashboardAdmin.class);
+                        intent.putExtra("nama", user);
+                        startActivity(intent);
+                        finish();
+                    } else if (level.equalsIgnoreCase("petugas")) {
+                        Toast.makeText(getApplicationContext(), "Berhasil masuk !", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, DashboardPetugas.class);
+                        intent.putExtra("nama", user);
+                        startActivity(intent);
+                        finish();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Nama pengguna atau Kata sandi salah !", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }

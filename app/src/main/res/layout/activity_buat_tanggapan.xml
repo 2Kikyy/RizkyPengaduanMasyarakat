@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:padding="30dp"
-    tools:context=".BuatPengaduan">
+    tools:context=".BuatTanggapan">
 
     <TextView
         android:id="@+id/txtTitlePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buat Pengaduan"
+        android:text="Buat Tanggapan"
         android:textColor="#000"
         android:textSize="26dp"
         android:fontFamily="@font/poppins_bold"
@@ -21,46 +21,46 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextStatus"
+        android:id="@+id/editTextIsi"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="400dp"
         android:layout_marginTop="18dp"
         android:background="@drawable/bg_outline_login_register"
         android:ems="10"
         android:fontFamily="@font/poppins_regular"
-        android:inputType="textPersonName"
-        android:hint="Judul Pengaduan"
-        android:textColor="#000"
-        android:textColorHint="#000"
-        android:paddingHorizontal="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitlePage" />
-
-    <EditText
-        android:id="@+id/editTextIsi"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/bg_outline_login_register"
-        android:ems="10"
-        android:fontFamily="@font/poppins_regular"
-        android:hint="Isi Aduan"
-        android:inputType="text|textMultiLine"
         android:gravity="top"
-        android:textColor="#000"
+        android:hint="Isi Tanggapan"
+        android:inputType="text|textMultiLine"
         android:padding="15dp"
+        android:textColor="#000"
         android:textColorHint="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextStatus" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTitlePage" />
+
+    <EditText
+        android:id="@+id/editTextStatus"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_outline_login_register"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Status(belum, proses, selesai)"
+        android:inputType="textPersonName"
+        android:paddingHorizontal="15dp"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextIsi" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLoginD"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/bg_solid_login_register"
         android:fontFamily="@font/poppins_semibold"
         android:text="Kirim"
@@ -68,23 +68,7 @@
         android:textColor="@color/white"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.737"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnUploadFoto" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnUploadFoto"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:background="#1EB504"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Upload Foto"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.004"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextIsi" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextStatus" />
 </androidx.constraintlayout.widget.ConstraintLayout>

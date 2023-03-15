@@ -63,7 +63,7 @@
                 android:textSize="18dp" />
 
             <EditText
-                android:id="@+id/editTextNamaD"
+                android:id="@+id/editTextNamaLengkapD"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="18dp"

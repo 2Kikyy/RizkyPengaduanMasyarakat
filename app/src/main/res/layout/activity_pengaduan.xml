@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:padding="20dp"
-    tools:context=".TambahPengaduan">
+    tools:context=".Pengaduan">
 
     <TextView
         android:id="@+id/txtInfo"
