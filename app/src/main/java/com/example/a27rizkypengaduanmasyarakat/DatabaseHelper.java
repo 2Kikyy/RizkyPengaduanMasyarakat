@@ -28,8 +28,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + MASYARAKAT_TABLE + " (nik text(16) primary key, namaLengkap text(35), username text(25), password text(32), telp text(13))");
         db.execSQL("INSERT INTO " + MASYARAKAT_TABLE + " VALUES ('00123', 'rizky', 'rizky123', '123', '08977523111')");
 
-        db.execSQL("CREATE TABLE " + PETUGAS_TABLE + " (id_petugas int(11) primary key, nama_petugas text(35), username text(25), password text(32), telp text(13), level text(10))");
-        db.execSQL("INSERT INTO " + PETUGAS_TABLE + " VALUES ('andria permani', 'andria12', '123', '08977342122', 'petugas')");
+        db.execSQL("CREATE TABLE " + PETUGAS_TABLE + " (id_petugas text(11) primary key, nama_petugas text(35), username text(25), password text(32), telp text(13), level text(10))");
+        db.execSQL("INSERT INTO " + PETUGAS_TABLE + " VALUES ('02001', 'andria permani', 'andria12', '123', '08977342122', 'petugas')");
     }
 
     @Override
