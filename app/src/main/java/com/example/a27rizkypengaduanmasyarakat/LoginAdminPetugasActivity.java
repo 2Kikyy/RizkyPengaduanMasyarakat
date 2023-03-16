@@ -21,7 +21,7 @@ public class LoginAdminPetugasActivity extends AppCompatActivity {
 
     private SQLiteDatabase db;
     private SQLiteOpenHelper openHelper;
-    private Cursor cursor;
+    private Cursor cursor, cursor2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,40 +47,31 @@ public class LoginAdminPetugasActivity extends AppCompatActivity {
 
         openHelper = new DatabaseHelper(this);
         db = openHelper.getReadableDatabase();
+        String username = etUsername.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
+        String level = etLevel.getText().toString().trim();
+        cursor2 = db.rawQuery("SELECT * FROM " + DatabaseHelper.PETUGAS_TABLE + " WHERE username = ? AND password = ?", new String[]{username, password});
 
         bLoginD.setOnClickListener((View view) -> {
-            String username = etUsername.getText().toString().trim();
-            String password = etPassword.getText().toString().trim();
-            String level = etLevel.getText().toString().trim();
-
-            if (username.isEmpty() || password.isEmpty() || level.isEmpty()) {
-                Toast.makeText(getApplicationContext(), "Harap isi semua kolom!", Toast.LENGTH_SHORT).show();
-            } else {
-                cursor = db.rawQuery("SELECT * FROM " + DatabaseHelper.PETUGAS_TABLE + " WHERE username = ? AND password = ?", new String[]{username, password});
-                if (cursor != null) {
-                    if (cursor.getCount() > 0) {
-                        if (level.equalsIgnoreCase("petugas")) {
-                            cursor = db.rawQuery("SELECT * FROM " + DatabaseHelper.PETUGAS_TABLE + " WHERE level = ?", new String[]{level});
-                            startActivity(new Intent(LoginAdminPetugasActivity.this, HomePetugas.class));
-                            Toast.makeText(getApplicationContext(), "Login berhasil!", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Login gagal!", Toast.LENGTH_SHORT).show();
-                        }
-                    }
+            if (cursor2.getCount() == 1) {
+                cursor2.moveToPosition(0);
+                String namaLengkapSqlite = cursor2.getString(1).toString();
+                String levelSqlite = cursor2.getString(6).toString();
+                if (level.equalsIgnoreCase("petugas")) {
+                    Toast.makeText(getApplicationContext(), "Berhasil masuk!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginAdminPetugasActivity.this, HomePetugas.class);
+                    intent.putExtra("namaLengkap", namaLengkapSqlite);
+                    startActivity(intent);
+                    finish();
                 } else if (level.equalsIgnoreCase("admin")) {
-                    cursor = db.rawQuery("SELECT * FROM " + DatabaseHelper.PETUGAS_TABLE + " WHERE username = ? AND password = ?", new String[]{username, password});
-                    if (cursor != null) {
-                        if (cursor.getCount() > 0) {
-                            if (level.equalsIgnoreCase("admin")) {
-                                cursor = db.rawQuery("SELECT * FROM " + DatabaseHelper.PETUGAS_TABLE + " WHERE level = ?", new String[]{level});
-                                startActivity(new Intent(LoginAdminPetugasActivity.this, HomeAdmin.class));
-                                Toast.makeText(getApplicationContext(), "Login berhasil!", Toast.LENGTH_SHORT).show();
-                            } else {
-                                Toast.makeText(getApplicationContext(), "Login gagal!", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    }
+                    Toast.makeText(getApplicationContext(), "Berhasil masuk!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginAdminPetugasActivity.this, HomeAdmin.class);
+                    intent.putExtra("namaLengkap", namaLengkapSqlite);
+                    startActivity(intent);
+                    finish();
                 }
+            } else {
+                Toast.makeText(getApplicationContext(), "Nama pengguna atau Kata sandi salah !", Toast.LENGTH_SHORT).show();
             }
         });
     }
