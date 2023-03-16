@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Ditanggapi extends AppCompatActivity {
+public class GenerateLaporanAdmin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ditanggapi);
+        setContentView(R.layout.activity_generate_laporan);
     }
 }

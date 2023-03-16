@@ -6,9 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.opengl.Visibility;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,7 +27,7 @@ public class LoginMasyarakatActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_masyarakat);
+        setContentView(R.layout.activity_login_masyarakat);
 
         belumRegisterMasyarakat = findViewById(R.id.belum_register_masyarakat);
         loginAdminPetugas = findViewById(R.id.login_admin_petugas);

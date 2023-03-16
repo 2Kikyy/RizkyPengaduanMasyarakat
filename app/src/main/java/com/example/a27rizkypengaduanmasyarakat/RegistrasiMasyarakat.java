@@ -61,16 +61,8 @@ public class RegistrasiMasyarakat extends AppCompatActivity {
             if (nik.isEmpty() || namaLengkap.isEmpty() || username.isEmpty() || password.isEmpty() || telepon.isEmpty()) {
                 Toast.makeText(RegistrasiMasyarakat.this, "Harap isi semua field yang ada!", Toast.LENGTH_SHORT).show();
             } else {
-//                ContentValues contentValues = new ContentValues();
-//                contentValues.put("nik", nik);
-//                contentValues.put("namaLengkap", namaLengkap);
-//                contentValues.put("username", username);
-//                contentValues.put("password", password);
-//                contentValues.put("telp", telepon);
-//
-//                db.insert(DatabaseHelper.MASYARAKAT_TABLE, null, contentValues);
 
-                db.execSQL("INSERT INTO " + MASYARAKAT_TABLE + " VALUES ( + " + nik + " + "," 'rizky', 'rizky123', '123', '08977523111')");
+                db.execSQL("INSERT INTO " + MASYARAKAT_TABLE + " VALUES (" + nik + ", '" + namaLengkap + "', '" + username + "', '" + password + "', '" + telepon + "');");
 
                 Toast.makeText(RegistrasiMasyarakat.this, "Registrasi berhasil!", Toast.LENGTH_SHORT).show();
 

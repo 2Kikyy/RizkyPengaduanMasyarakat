@@ -49,7 +49,7 @@
                 android:id="@+id/textInfoUser"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Anda adalah masyarakat"
+                android:text="Anda adalah petugas"
                 android:textColor="#fff"
                 android:textSize="18dp"
                 android:fontFamily="@font/poppins_regular" />
@@ -103,7 +103,7 @@
             android:padding="30dp">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/complaint"
+                android:id="@+id/aduanMasukD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="#062161"
@@ -134,7 +134,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/response"
+                android:id="@+id/inginMenanggapiD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"

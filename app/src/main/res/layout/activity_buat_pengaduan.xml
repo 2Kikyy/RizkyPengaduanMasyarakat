@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:padding="30dp"
-    tools:context=".BuatPengaduan">
+    tools:context=".BuatPengaduanMasyarakat">
 
     <TextView
         android:id="@+id/txtTitlePage"

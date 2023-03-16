@@ -15,26 +15,28 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".AduanMasukAdminPetugas"
+            android:exported="false" />
+        <activity
             android:name=".PetugasProfile"
             android:exported="false" />
         <activity
             android:name=".AdminProfile"
             android:exported="false" />
         <activity
-            android:name=".GenerateLaporan"
-            android:exported="false">
-        </activity>
+            android:name=".GenerateLaporanAdmin"
+            android:exported="false"></activity>
         <activity
-            android:name=".BuatTanggapan"
+            android:name=".BuatTanggapanAdminPetugas"
             android:exported="false" />
         <activity
-            android:name=".BuatPengaduan"
+            android:name=".BuatPengaduanMasyarakat"
             android:exported="false" />
         <activity
-            android:name=".Ditanggapi"
+            android:name=".DitanggapiMasyarakat"
             android:exported="false" />
         <activity
-            android:name=".Pengaduan"
+            android:name=".PengaduanMasyarakat"
             android:exported="false" />
         <activity
             android:name=".MasyarakatProfile"
@@ -47,12 +49,6 @@
             android:exported="false" />
         <activity
             android:name=".HomeAdmin"
-            android:exported="false" />
-        <activity
-            android:name=".AddTanggapan"
-            android:exported="false" />
-        <activity
-            android:name=".AddPengaduan"
             android:exported="false" />
         <activity
             android:name=".HomePetugas"

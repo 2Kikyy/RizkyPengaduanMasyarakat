@@ -77,6 +77,21 @@
                 android:textColorHint="@color/black"
                 android:textSize="18dp" />
 
+            <EditText
+                android:id="@+id/editTextLevelD"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_outline_login_register"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Level"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="18dp" />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnLoginD"
                 android:layout_width="match_parent"
